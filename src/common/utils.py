@@ -8,7 +8,7 @@ Created on 08-Nov-2014
 from nltk.corpus.reader.plaintext import PlaintextCorpusReader
 from common import settings
 import csv
-import ngb
+from nltk.util import ngrams
 
 
 def get_corpus_words():
@@ -67,5 +67,5 @@ def get_ngrams(text, n):
     '''
         For the given n, returns the ngrams computed from the text.
     '''
-    builder = ngb.NgramBuilder(ngb.stopwords)
-    return builder.find_ngrams(text, n).keys()
+    text = text.lower()
+    return ngrams(text.split(), n)
