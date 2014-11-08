@@ -15,11 +15,14 @@ Classification is based on the PMI score. For a given NGram, we check to see if 
 How to Use?
 =============
 1. Install the dependencies
-..* pip install -r requirements.txt
+  * pip install -r requirements.txt
 
 2. Run the main.py program in src with --repl option.
-..* ./main.py --repl
-3. The repl allow you to type a text and find out the valid NGram phrases.
+  * ./main.py --repl
+3. The repl allows you to type a text and find out the valid NGram phrases.
 
 In addition to --repl, the main script also allow you to recompute the BIGrams, TRIGrams and QUADGrams and their collocations score, in case you decide to update the development corpus. This is being supported with --prepare option.
-..* ./main.py --prepare
+
+  * ./main.py --prepare
+
+Please note that, computing NGrams and specially their score are compute intensive operations and hence, prepare operation would take time to complete.
