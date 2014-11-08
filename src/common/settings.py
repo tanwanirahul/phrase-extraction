@@ -10,15 +10,17 @@ import os
 # ../data directory.
 CORPUS_ROOT = os.path.join('..', 'data')
 
-CORPUS_FILES_GLOBB = '.*.txt'
+CORPUS_FILES_GLOBB = 'movies-data-dev.txt'
 
 
 # ../data/<n>grams.txt
 VALID_BI_GRAMS_FILE = os.path.join(CORPUS_ROOT, 'bigrams.txt')
-
 VALID_TRI_GRAMS_FILE = os.path.join(CORPUS_ROOT, 'trigrams.txt')
-
 VALID_QUAD_GRAMS_FILE = os.path.join(CORPUS_ROOT, 'quadgrams.txt')
 
+# Min PMI score values for N Gram to be qualified as valid.
+MIN_BI_GRAMS_SCORE = 10
+MIN_TRI_GRAMS_SCORE = 10
+MIN_QUAD_GRAMS_SCORE = 10
 
 NGRAM_MIN_FREQ = 5
