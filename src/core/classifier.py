@@ -17,9 +17,8 @@ def is_valid(ngram_scores_data, ngram, min_score):
     '''
         For a given ngram, returns if the ngarm is valid based on min score.
     '''
-    ngram = tuple(ngram.split(' '))
     score = ngram_scores_data.get(ngram, None)
-    if (score is not None) and score >= min_score:
+    if (score is not None) and float(score) >= min_score:
         return True
     return False
 
