@@ -19,8 +19,8 @@ VALID_TRI_GRAMS_FILE = os.path.join(CORPUS_ROOT, 'trigrams.txt')
 VALID_QUAD_GRAMS_FILE = os.path.join(CORPUS_ROOT, 'quadgrams.txt')
 
 # Min PMI score values for N Gram to be qualified as valid.
-MIN_BI_GRAMS_SCORE = 10
-MIN_TRI_GRAMS_SCORE = 10
-MIN_QUAD_GRAMS_SCORE = 10
+MIN_BI_GRAMS_SCORE = 11
+MIN_TRI_GRAMS_SCORE = 18
+MIN_QUAD_GRAMS_SCORE = 50
 
 NGRAM_MIN_FREQ = 5
