@@ -8,6 +8,7 @@ Created on 08-Nov-2014
 from nltk.corpus.reader.plaintext import PlaintextCorpusReader
 from common import settings
 import csv
+import ngb
 
 
 def get_corpus_words():
@@ -35,6 +36,14 @@ def save_ngrams_score(ngrams_scores, out_file):
     write_csv(out_file, rows)
 
 
+def load_ngrams_score(csv_file):
+    '''
+        Loads the given file containing the ngrmas_scores, and prepares and
+        returns the dictionary.
+    '''
+    return {tuple(row[0].split(' ')): row[1] for row in read_csv(csv_file)}
+
+
 def write_csv(csv_file, rows):
     '''
         Writes the given rows to a csv file.
@@ -52,3 +61,11 @@ def read_csv(csv_file):
         reader = csv.reader(ifile, delimiter=',')
         for row in reader:
             yield row
+
+
+def get_ngrams(text, n):
+    '''
+        For the given n, returns the ngrams computed from the text.
+    '''
+    builder = ngb.NgramBuilder(ngb.stopwords)
+    return builder.find_ngrams(text, n).keys()
